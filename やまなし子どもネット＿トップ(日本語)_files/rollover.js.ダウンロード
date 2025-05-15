@@ -1,0 +1,18 @@
+// JavaScript Document
+
+$(function() {
+	$(".rollover").each(function(){
+
+		var defaultSrc = $(this).attr("src");
+		var hoverSrc = defaultSrc.replace(/^(.+)(\.[a-zA-Z]+)$/, "$1_hover$2");
+		$("<img />").attr("src", hoverSrc);
+
+		$(this).hover(function(){
+			$(this).attr("src", hoverSrc);
+		},
+		function(){
+			$(this).attr("src", defaultSrc);
+		});
+
+	});
+});
